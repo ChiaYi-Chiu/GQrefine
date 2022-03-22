@@ -21,7 +21,7 @@ GQrefine=function(Y = Y, Q = Q, initial.att = NULL, distance = "whamming", ideal
   for (cyc in 1:ncyc){ # Start cycle
     #q.max.rto.log.jj=NULL
     if(is.null(initial.att)){ # If alpha_i not given, then GNPC is applied
-      classification=GNPC(Y, initial.Q, initial.gate = "AND", initial.dis = "Weighted")
+      classification=GNPC(Y, initial.Q, initial.gate = "AND", initial.dis = distance)
       est.class=classification$class
       est.weight=classification$weight
     } else {
